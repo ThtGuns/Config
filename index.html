@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement de Fichier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Téléchargez CODM AGGRESSIVE AIM ASSIST V50🔥</h1>
+        <p class="subtitle">Choisissez votre plateforme de prédilection pour le téléchargement.</p>
+        <a target="_blank" href="https://drive.google.com/uc?id=191lXCVHe2RGwCg2mgcjSdNe9BDWWvfL7&amp;export=download" id="driveDownloadButton" class="button">Google Drive</a>
+        <button id="localDownloadButton" class="button">Stockage Local</button>
+    </div>
+
+    <script type="text/javascript" id="dcoder_script">
+        document.addEventListener('DOMContentLoaded', () => {
+            const DRIVE_DOWNLOAD_BUTTON = document.getElementById('driveDownloadButton');
+            const LOCAL_DOWNLOAD_BUTTON = document.getElementById('localDownloadButton');
+
+            DRIVE_DOWNLOAD_BUTTON.addEventListener('click', (event) => {
+                event.preventDefault();
+                console.log('Clicked Google Drive Download!');
+                // TODO: Implement logic to redirect to Google Drive download link
+            });
+
+            LOCAL_DOWNLOAD_BUTTON.addEventListener('click', () => {
+                console.log('Clicked Local Download!');
+                const filename = 'AGGRESSIVE AIM ASSIST V50🔥.Zip';
+                const filePath = '/storage/emulated/0/Documents/Config.html/Téléchargement/' + filename;
+                const url = URL.createObjectURL(new Blob([filePath], {type: 'application/octet-stream'}));
+                const aTag = document.createElement('a');
+                aTag.href = url;
+                aTag.download = filename;
+                aTag.click();
+            });
+        });
+    </script>
+</body>
+</html>
